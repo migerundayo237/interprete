@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * REPL — Read-Eval-Print Loop del intérprete LauraSeFue.
+ * REPL — Read-Eval-Print Loop del intérprete Javadabadú.
  *
  * Permite ejecutar código de forma interactiva línea a línea.
  * El entorno (variables, funciones) persiste entre entradas.
@@ -29,8 +29,7 @@ public class Repl {
     private static final String PROMPT = ">> ";
     private static final String BANNER = """
             ╔══════════════════════════════════════════╗
-            ║    LauraSeFue Language Interpreter       ║
-            ║    Laura se fue... Laura no está :'(     ║
+            ║    Javadabadú Language Interpreter       ║
             ║    Escribe 'exit' o 'salir' para salir   ║
             ╚══════════════════════════════════════════╝
             """;
@@ -50,7 +49,7 @@ public class Repl {
 
             if (line.isEmpty()) continue;
             if (line.equals("exit") || line.equals("salir")) {
-                System.out.println("¡Hasta pronto! Laura sigue sin estar :'(");
+                System.out.println("chaito");
                 break;
             }
 

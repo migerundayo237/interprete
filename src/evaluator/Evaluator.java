@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Evaluator — Tree-Walking Interpreter para LauraSeFue.
+ * Evaluator — Tree-Walking Interpreter para Javadabadú.
  *
  * Slide 21: "La Función Eval: método de Tree-Walking que visita nodos
  * usando pattern matching."

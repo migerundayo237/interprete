@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 /**
  * AST — Árbol Sintáctico Abstracto (Abstract Syntax Tree)
  *
- * Traducción directa del ast.py de LauraSeFue a Java.
  * Jerarquía:
  *
  *   Node

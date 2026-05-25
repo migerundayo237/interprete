@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
  * Object System — Representaciones dinámicas de ejecución.
  *
  * El Evaluador produce estos objetos al recorrer el AST.
- * Cada tipo de valor que LauraSeFue puede manejar en runtime
+ * Cada tipo de valor que Javadabadú puede manejar en runtime
  * tiene su clase correspondiente aquí.
  *
  * Slide 21 de la presentación:
