@@ -8,6 +8,9 @@ import object.LObject.LNull;
 import parser.Parser;
 import ast.AST.Program;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
@@ -33,6 +36,37 @@ public class Repl {
             ║    Escribe 'exit' o 'salir' para salir   ║
             ╚══════════════════════════════════════════╝
             """;
+
+    public static void runFile(String filePath) {
+        String source;
+        try {
+            source = new String(Files.readAllBytes(Paths.get(filePath)));
+        } catch (IOException e) {
+            System.err.println("Error: no se pudo leer el archivo \"" + filePath + "\": " + e.getMessage());
+            System.exit(1);
+            return;
+        }
+
+        Evaluator eval = new Evaluator();
+        Environment env  = new Environment();
+
+        Lexer   lexer   = new Lexer(source);
+        Parser  parser  = new Parser(lexer);
+        Program program = parser.parseProgram();
+
+        List<String> errors = parser.getErrors();
+        if (!errors.isEmpty()) {
+            System.err.println("Errores de sintaxis en \"" + filePath + "\":");
+            errors.forEach(e -> System.err.println("  → " + e));
+            System.exit(1);
+            return;
+        }
+
+        LObj result = eval.eval(program, env);
+        if (result != null && !(result instanceof LNull)) {
+            System.out.println(result.inspect());
+        }
+    }
 
     public static void start() {
         System.out.println(BANNER);
